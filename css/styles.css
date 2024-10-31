@@ -179,24 +179,21 @@ body {
 
 /* Galería */
 .gallery {
-    background:transparent;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 5px;
-    justify-items: center;
-    align-items: start;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se apilen en una nueva línea */
+    gap: 10px; /* Espacio entre los elementos */
+    justify-content: center; /* Centra los elementos dentro del contenedor */
+    background: transparent;
 }
 
 /* Items de la galería */
 .gallery-item {
+    flex: 1 1 calc(33.333% - 10px); /* Ancho inicial de cada ítem (1/3 del contenedor) con espacio entre ellos */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 5px;
-    box-sizing: border-box;
-    justify-content: flex-start;
+    margin-bottom: 10px; /* Espacio inferior entre elementos */
 }
 
 .gallery-img {
@@ -242,8 +239,9 @@ body {
 }
 
 .body-automovilismo {
-    position: relative; /* Necesario para posicionar correctamente el ::before */
+    position: relative;
     min-height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .body-automovilismo::before {
@@ -253,16 +251,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/MOTOFONDO.jpg'); /* Imagen de fondo */
+    background-image: url('../images/MOTOFONDO.jpg'); /* Cambia esto si necesitas una imagen específica */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color:#000;
-    z-index: -1; /* Envía la imagen de fondo detrás del contenido */
-    pointer-events: none;
+    z-index: -1;
     opacity: 0.5;
 }
+
 
 .body-circuitos {
     position: relative; /* Necesario para posicionar correctamente el ::before */
@@ -287,14 +284,23 @@ body {
     opacity: 0.5;
 }
 
-@media (max-width: 576px) {
-    .product-img {
-        width: 80%; /* Altura más pequeña en smartphones */
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 100%; /* Las imágenes se apilan en una columna en pantallas más pequeñas */
+    }
+
+    .hero-title {
+        font-size: 2.5rem; /* Reduce el tamaño del texto en pantallas más pequeñas */
+    }
+
+    .hero-text {
+        font-size: 1.2rem; /* Ajusta la descripción */
     }
 }
 
-@media (max-width: 768px) {
-    .product-img {
-        width: 80%; /* Altura ajustada para tablets */
+
+@media (max-width: 576px) {
+    .gallery-item {
+        flex: 1 1 100%; /* Ancho de cada ítem en smartphones (100% del contenedor) */
     }
 }
