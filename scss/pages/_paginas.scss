@@ -1,0 +1,94 @@
+@use '../base/variables' as vars;
+
+
+
+.body-artemotor,
+.body-automovilismo,
+.body-circuitos {
+    position: relative;
+    min-height: 100vh;
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        z-index: -1;
+        opacity: 0.5;
+    }
+}
+
+.body-artemotor::before {
+    background-image: url('../images/FONDOARTEMOTOR.jpg');
+}
+
+.body-automovilismo::before {
+    background-image: url('../images/MOTOFONDO.jpg');
+}
+
+.body-circuitos::before {
+    background-image: url('../images/SPAHORIZONTAL.jpg');
+}
+
+// Responsive Adjustments
+
+// Tablet (768px and below)
+@media (max-width: 768px) {
+    .body-artemotor,
+.body-automovilismo,
+.body-circuitos {
+        padding: 15px; // Reduce padding for smaller screens
+
+        .hero-title {
+            font-size: 50px; // Reduce title font-size for better readability
+        }
+
+        .hero-text {
+            font-size: 25px; // Smaller text
+        }
+
+        .gallery {
+            gap: 10px; // Adjust spacing
+        }
+
+        .gallery-item {
+            flex: 1 1 48%; // Display images in two columns instead of three
+        }
+    }
+}
+
+// iPhone and smaller screens (576px and below)
+@media (max-width: 576px) {
+    .body-artemotor,
+.body-automovilismo,
+.body-circuitos {
+        padding: 10px; // Further reduce padding for small screens
+
+        .hero-title {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .hero-text {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .gallery-item {
+            flex: 1 1 100%; // Make images stack in a single column
+        }
+
+        .gallery-img {
+            height: auto; // Allow height to adjust dynamically to avoid distortion
+            max-height: 300px; // Restrict max height for consistency
+            object-fit: cover; // Cover to avoid stretching images
+        }
+    }
+}

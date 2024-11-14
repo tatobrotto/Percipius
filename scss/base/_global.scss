@@ -1,0 +1,9 @@
+@use '../base/variables' as vars;
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: vars.$background-dark;
+    color: vars.$text-color;
+    margin: 0;
+    padding: 0;
+}

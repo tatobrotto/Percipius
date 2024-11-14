@@ -3,40 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuitos - Percipios</title>
-    <link rel="stylesheet" href="../css/styles.css"> <!-- Usa el mismo CSS que en index -->
+    <meta name="title" content="Percipios - Contáctanos">
+    <meta name="description" content="Contactanos.">
+    <meta name="robots" content="index, follow">
+    
+    <title>Contacto - Percipios</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
 
-<header>
-    <a href="../index.html">
-        <img src="../images/logonegro.png" alt="Logo Percipios" height="200px">
-    </a>
-    <h1>Circuitos</h1>
+<body class="body-contacto">
+<!-- Header responsive con Bootstrap -->
+<header class="header sticky-top bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/logoblanco.png" alt="Logo Percipios" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/Automovilismo.html">Automovilismo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/ArteMotor.html">Arte de Motor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/Circuitos.html">Circuitos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 
-<nav>
-    <a href="Automovilismo.html">Automovilismo</a>
-    <a href="ArteMotor.html">Arte de Motor</a>
-    <a href="Circuitos.html">Circuitos</a>
-    <a href="contacto.html">Contacto</a>
-</nav>
+<!-- Hero Section para la página de Contacto -->
+<section class="hero hero-contacto">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title focus-in-expand">Contáctanos</h1>
+        <p class="hero-text focus-in-expand">Estamos aquí para resolver tus dudas</p>
+    </div>
+</section>
 
-<main>
-    <h2>Los Circuitos Más Emblemáticos</h2>
-    <p>Sumérgete en la historia de los circuitos más icónicos del mundo del automovilismo. Nuestras obras de arte capturan la esencia de estas pistas que han sido escenario de las carreras más memorables.</p>
-    <img src="images/circuitos.jpg" alt="Circuitos">
+<!-- Sección principal de contacto -->
+<main class="main-content">
+    <section class="contact-form">
+        <h2>Envíanos un mensaje</h2>
+        <p>¿Tienes alguna pregunta o comentario? Completa el formulario a continuación o contáctanos a través de nuestras redes sociales.</p>
+
+        <!-- Formulario de contacto -->
+        <form action="submit_contact.php" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 </main>
 
-<footer>
+<!-- Footer -->
+<footer class="footer">
+    <p>Percipios © 2024</p>
     <div class="social-links">
-        <a href="https://facebook.com" target="_blank">📘</a>
-        <a href="https://instagram.com" target="_blank">📷</a>
-        <a href="https://whatsapp.com" target="_blank">📱</a>
+        <a href="https://www.instagram.com/percipios/">Instagram</a>
+        <a href="https://wa.me/qr/WZ2UWOSQH662N1">Whatsapp</a>
     </div>
-    <p>Síguenos en redes: Percipios</p>
-    <p>Whatsapp: +54 1144090505</p>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
