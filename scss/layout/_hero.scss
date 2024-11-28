@@ -11,9 +11,21 @@
     text-align: center;
 
     .hero-logo {
-        height: 200px;
-        width: auto;
+        height: 350px; // Tamaño inicial
+    
+        @media (max-width: 768px) { // Para tablets
+            height: 200px;
+        }
+    
+        @media (max-width: 576px) { // Para teléfonos pequeños
+            height: 150px;
+        }
+    
+        @media (max-width: 360px) { // Extra pequeño (por ejemplo, iPhone SE)
+            height: 120px;
+        }
     }
+    
 
     .hero-overlay {
         position: absolute;
@@ -41,18 +53,4 @@ $font-sizes: (
     "hero-text-tablet": 1.2rem
 );
 
-.hero-title {
-    font-size: map.get($font-sizes, "hero-title");
 
-    @media (max-width: 768px) {
-        font-size: map.get($font-sizes, "hero-title-tablet");
-    }
-}
-
-.hero-text {
-    font-size: map.get($font-sizes, "hero-text");
-
-    @media (max-width: 768px) {
-        font-size: map.get($font-sizes, "hero-text-tablet");
-    }
-}

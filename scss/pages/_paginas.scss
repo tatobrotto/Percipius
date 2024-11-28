@@ -41,9 +41,10 @@
 
 // Tablet (768px and below)
 @media (max-width: 768px) {
+
     .body-artemotor,
-.body-automovilismo,
-.body-circuitos {
+    .body-automovilismo,
+    .body-circuitos {
         padding: 15px; // Reduce padding for smaller screens
 
         .hero-title {
@@ -66,9 +67,10 @@
 
 // iPhone and smaller screens (576px and below)
 @media (max-width: 576px) {
+
     .body-artemotor,
-.body-automovilismo,
-.body-circuitos {
+    .body-automovilismo,
+    .body-circuitos {
         padding: 10px; // Further reduce padding for small screens
 
         .hero-title {
